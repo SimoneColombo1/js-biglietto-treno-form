@@ -6,6 +6,8 @@ document.querySelector('#submit').addEventListener('click' , function() {
     const km= parseInt(document.querySelector('input#km').value, );
     const sum = km * prezzo;
     const PrezzoTotale= document.querySelector('span#PrezzoTotale'); 
+    const scontoeta= document.querySelector('span#scontoeta'); 
+    
     const scontoA= 42;
     const scontoB= 21;
     if  (eta > 18){
@@ -16,6 +18,7 @@ document.querySelector('#submit').addEventListener('click' , function() {
            
             
     PrezzoTotale.innerHTML = totale + '€' ;
+    scontoeta.innerHTML = scontoA + '%';
      
         }
         else{
@@ -29,6 +32,7 @@ document.querySelector('#submit').addEventListener('click' , function() {
         const totale= (sum - PrezzoScontato).toFixed(2);
         console.log(totale);
        PrezzoTotale.innerHTML = totale + '€' ;
+       scontoeta.innerHTML = scontoB + '%';
     }
 
 })
