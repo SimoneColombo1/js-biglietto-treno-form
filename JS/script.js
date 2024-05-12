@@ -5,7 +5,7 @@ document.querySelector('#submit').addEventListener('click' , function() {
     const eta= parseInt(document.querySelector('input#eta').value, );
     const km= parseInt(document.querySelector('input#km').value, );
     const sum = km * prezzo;
-    
+    const PrezzoTotale= document.querySelector('span#PrezzoTotale'); 
     const scontoA= 42;
     const scontoB= 21;
     if  (eta > 18){
@@ -13,19 +13,22 @@ document.querySelector('#submit').addEventListener('click' , function() {
             const PrezzoScontato= (sum / 100) * scontoA;
             const totale= (sum - PrezzoScontato).toFixed(2);
             console.log(totale);
-            document.writeln(totale);
+           
+            
+    PrezzoTotale.innerHTML = totale + '€' ;
      
         }
         else{
             console.log(sum);
             document.writeln(sum); 
+              PrezzoTotale.innerHTML= sum + '€';
         }
     }
     else{
         const PrezzoScontato= (sum / 100) * scontoB;
         const totale= (sum - PrezzoScontato).toFixed(2);
         console.log(totale);
-        document.writeln(totale); 
+       PrezzoTotale.innerHTML = totale + '€' ;
     }
 
 })
